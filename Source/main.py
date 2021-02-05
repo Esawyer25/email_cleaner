@@ -16,11 +16,11 @@ validator = Validator()
 passed = []
 failed = []
 for email in unedited_emails:
-    validator.hasCurseWords(email)
-    validator.hasTest(email)
-    validator.hasBadDomain(email)
-    validator.hasBadSuffix(email)
-
+    validator.has_curse_word(email)
+    validator.has_test_word(email)
+    validator.has_bad_domain(email)
+    validator.has_bad_suffix(email)
+    validator.is_gibberish(email)
 
 #temp: print out results.  todo: replace with something nicer
 count = 0
@@ -43,6 +43,9 @@ print(validator.contains_curses)
 print("----")
 print("{0} emails with a test word".format(len(validator.contains_test)))
 print(validator.contains_test)
+print("----")
+print("{0} emails is gibberish".format(len(validator.gibberish)))
+print(validator.gibberish)
 print("----")
 print("{0} still valid".format(len(still_valid)))
 print(still_valid)
